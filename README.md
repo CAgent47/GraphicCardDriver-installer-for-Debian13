@@ -19,7 +19,7 @@ All you can do is relax, watch and star this post.😉**
 ---
 # How To Use 🤔
 
-1. ![Download_Me](https://github.com/GodFather850/GraphicCardDriver-installer-for-Debian13/upload/main) 📦
+1. ![Download_Me](https://github.com/CAgent_47/GraphicCardDriver-installer-for-Debian13/upload/main) 📦
 2. **Extract File and Goto Script Folder 📂**
 3.**Run ▶️**
 ```bash
@@ -36,7 +36,7 @@ bash
 bash installer.sh
 ```
 ---
-# -👤Created By GodFather
+# -👤Created By CAgent_47
 # -📜MTA Scripter • Linux Learner🐧 • Python Learner • SQL • Bash Scripter 🇺🇸🔥
 ---
 
