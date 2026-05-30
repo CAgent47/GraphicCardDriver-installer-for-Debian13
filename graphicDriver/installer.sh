@@ -6,4 +6,4 @@ sudo apt install -y linux-headers-$(uname -r) build-essential dkms nvidia-detect
 nvidia-detect
 sudo apt install -y nvidia-driver nvidia-kernel-dkms
 echo "restart your system Please"
-echo "Created By GodFather"
+echo "Created By CAgent_47"
