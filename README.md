@@ -19,9 +19,13 @@ All you can do is relax, watch and star this post.😉**
 ---
 # How To Use 🤔
 
-1. ![Download_Me](https://github.com/CAgent_47/GraphicCardDriver-installer-for-Debian13/upload/main) 📦
-2. **Extract File and Goto Script Folder 📂**
-3.**Run ▶️**
+1. Download 📦
+```bash
+git clonehttps://github.com/CAgent47/GraphicCardDriver-installer-for-Debian13.git
+```
+
+3. **Extract File and Goto Script Folder 📂**
+4.**Run ▶️**
 ```bash
 # 1
 chmod +x installer.sh
