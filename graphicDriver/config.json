@@ -1,10 +1,10 @@
 {
     "packages": [
         "build-essential",
-        "dkms nvidia-detect",
-        "nvidia-smi"
+        "dkms",
+        "nvidia-detect"
     ],
-    "next_Packages": [
+    "next_packages": [
         "nvidia-driver",
         "nvidia-kernel-dkms"
     ]
