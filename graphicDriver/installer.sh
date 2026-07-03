@@ -11,6 +11,10 @@ installer() {
     else
         echo "[ + ] Installing '$pkg' ..."
         sudo apt install -y "$pkg"
+        if ! sudo apt install -y "$pkg"; then
+            echo "[ERROR]: failed to install $pkg"
+            exit 1
+        fi
     fi
 }
 
