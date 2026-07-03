@@ -1,4 +1,4 @@
-# GraphicCardDriver-installer-for-Debian13 🚀
+# GraphicCardDriver-installer-for-Debian13 (V2.0) 🚀
 Many people who use Debian 13 have problems installing graphics card drivers, and I came to this post to solve this problem for them.
 
 ---
@@ -30,8 +30,8 @@ All you can do is relax, watch and star this post.😉**
 git clone https://github.com/CAgent47/GraphicCardDriver-installer-for-Debian13.git
 ```
 
-3. **Extract File and Goto Script Folder 📂**
-4.**Run ▶️**
+2. **Extract File and Goto Script Folder 📂**
+3.**Run ▶️**
 ```bash
 # 1
 chmod +x installer.sh
