@@ -1,28 +1,70 @@
 #!/bin/bash
+set -euo pipefail
 
-function installer() {
-    if ! command -v "$@" &> /dev/null; then
-        echo '[ + ] installing '"$@"
-        sudo apt install -y "$@"
+CONFIG_FILE="${1:-config.json}"
+
+# -------------- Installing Package if Not Exists -------------
+installer() {
+    local pkg="$1"
+    if dpkg -s "$pkg" &> /dev/null; then
+        echo "[ - ] '$pkg' Installed in your System"
     else
-        echo '[ - ] '"$@"' installed in your PC'
+        echo "[ + ] Installing '$pkg' ..."
+        sudo apt install -y "$pkg"
     fi
 }
-sudo apt install -y linux-headers-$(uname -r)
-sudo sed -i 's/main/main non-free contrib/g' /etc/apt/sources.list
+
+# ---------- prerequisite ----------
+if ! command -v jq &> /dev/null; then
+    sudo apt update && sudo apt install -y jq
+fi
+
+if [[ ! -f "$CONFIG_FILE" ]]; then
+
+    if [[ ! -f "confcreator.py" ]]; then
+        echo "[ Python Error ]: Conf Create File Not Exists Please Goto https://github.com/CAgent47/GraphicCardDriver-installer-for-Debian13 and Download '*.py' file Please"
+        exit 1
+    fi
+    
+    echo "[FiX]: File $CONFIG_FILE Not Found Creating File." >&2
+    if ! command -v python3 &> /dev/null; then
+        sudo apt install -y python3-full
+    fi
+    python3 confcreator.py
+fi
+
+# ---------------- OS --------------------
+if [[ -f /etc/os-release ]] && grep -qi '^ID=debian' /etc/os-release; then
+    if ! grep -q 'non-free' /etc/apt/sources.list 2>/dev/null; then
+        echo "adding non-free و contrib to sources.list (Debian) ..."
+        sudo sed -i 's/ main$/ main non-free contrib/' /etc/apt/sources.list
+    else
+        echo "non-free Activated"
+    fi
+else
+    echo "your opration system is not Debian."
+fi
+
 sudo apt update && sudo apt full-upgrade -y
-pkg_basic=($(jq -r '.packages[]' config.json))
-pkg_next=($(jq -r '.next_Packages[]' config.json))
+
+# ---------- Read Json File ----------
+mapfile -t pkg_basic < <(jq -r '.packages[]' "$CONFIG_FILE")
+mapfile -t pkg_next  < <(jq -r '.next_packages[]' "$CONFIG_FILE")
+
+
+installer "linux-headers-$(uname -r)"
 
 for basic in "${pkg_basic[@]}"; do
-    installer $basic
+    installer "$basic"
 done
 
-nvidia-detect
+if command -v nvidia-detect &> /dev/null; then
+    nvidia-detect
+fi
 
-for afterkg in "${pkg_next[@]}"; do
-    installer $afterkg
+for pkg in "${pkg_next[@]}"; do
+    installer "$pkg"
 done
 
-echo "restart your system Please"
+echo "please restart your System"
 echo "Created By CAgent_47"
