@@ -42,7 +42,8 @@ bash installer.sh
 
 **Note:**
 
-*If your system does not have an Nvidia graphics card or does not have a graphics card or has an old Nvidia graphics card like the GTX 740m, your graphics card will not load due to lack of support.*
+*If your system does not have an Nvidia graphics card or does not have a graphics card or has an old Nvidia graphics card like the GTX 740m, your graphics card will not load due to lack of support. Please check the link below to see if your graphics card driver is supported.*
+[Nvidia-Driver](www.nvidia.com)
 
 
 ---
