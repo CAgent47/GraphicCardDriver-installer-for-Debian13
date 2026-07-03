@@ -16,12 +16,18 @@ All you can do is relax, watch and star this post.😉**
 
 • **Automatic**
 
+• **Check OS Release**
+
+• **Full Automatic Configur And Install Driver**
+
+• **check exists File**
+
 ---
 # How To Use 🤔
 
 1. Download 📦
 ```bash
-git clonehttps://github.com/CAgent47/GraphicCardDriver-installer-for-Debian13.git
+git clone https://github.com/CAgent47/GraphicCardDriver-installer-for-Debian13.git
 ```
 
 3. **Extract File and Goto Script Folder 📂**
