@@ -36,14 +36,8 @@ git clone https://github.com/CAgent47/GraphicCardDriver-installer-for-Debian13.g
 # 1
 chmod +x installer.sh
 
-# 2
-echo $0 # if ZSH then:
-bash
-
-# Otherwise, if bash then Do not perform the above step and go to the next step.
-
-# 3
-bash installer.sh
+# 2 RUN
+./installer.sh
 ```
 
 **Note:**
@@ -54,7 +48,7 @@ bash installer.sh
 
 ---
 # -👤Created By CAgent_47
-# -📜MTA Scripter • Linux Learner🐧 • Python Learner • SQL • Bash Scripter 🇺🇸🔥
+# -📜MTA Scripter • Linux User🐧 • Python • SQL • Bash Scripter 🇺🇸🔥
 ---
 
 **Topics:** 
