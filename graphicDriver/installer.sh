@@ -63,6 +63,8 @@ done
 
 if command -v nvidia-detect &> /dev/null; then
     nvidia-detect
+else
+    sudo apt install -y nvidia-detect
 fi
 
 for pkg in "${pkg_next[@]}"; do
