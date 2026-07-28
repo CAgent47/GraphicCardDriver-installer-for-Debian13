@@ -66,4 +66,4 @@ chmod +x installer.sh
 
 ---
 
-[Banner](banner.png)
+![Banner](banner.png)
