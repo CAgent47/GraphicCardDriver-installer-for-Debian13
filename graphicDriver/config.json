@@ -7,5 +7,6 @@
     "next_packages": [
         "nvidia-driver",
         "nvidia-kernel-dkms"
-    ]
+    ],
+    "sysUpdate": true
 }

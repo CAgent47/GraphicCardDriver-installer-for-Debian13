@@ -1,6 +1,4 @@
 #!/bin/bash
-set -euo pipefail
-
 CONFIG_FILE="${1:-config.json}"
 
 # -------------- Installing Package if Not Exists -------------
@@ -39,7 +37,7 @@ fi
 # ---------------- OS --------------------
 if [[ -f /etc/os-release ]] && grep -qi '^ID=debian' /etc/os-release; then
     if ! grep -q 'non-free' /etc/apt/sources.list 2>/dev/null; then
-        echo "adding non-free و contrib to sources.list (Debian) ..."
+        echo "adding non-free and contrib to sources.list (Debian) ..."
         sudo sed -i 's/ main$/ main non-free contrib/' /etc/apt/sources.list
     else
         echo "non-free Activated"
@@ -48,7 +46,9 @@ else
     echo "your opration system is not Debian."
 fi
 
-sudo apt update && sudo apt full-upgrade -y
+if [ $(jq -r '.sysUpdate' "$CONFIG_FILE") = "true" ]; then
+    sudo apt update && sudo apt full-upgrade -y
+fi
 
 # ---------- Read Json File ----------
 mapfile -t pkg_basic < <(jq -r '.packages[]' "$CONFIG_FILE")
