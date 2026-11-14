@@ -50,7 +50,7 @@ chmod +x installer.sh
 
 
 ---
-# -👤Develoer CAgent_47
+# -👤Develoer: CAgent_47
 # -📜MTA Scripter • Linux User🐧 • Python • SQL • Bash Scripter 🇺🇸🔥
 ---
 
